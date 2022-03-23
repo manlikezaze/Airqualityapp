@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Route Planner based on Air Quality</title>
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <script
+            src="https://kit.fontawesome.com/ab2155e76b.js"
+            crossorigin="anonymous"
+        ></script>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"/>     
+        
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div >
+                <!-- First Section-->
+                <div id="top-section" class="container-fluid">
+                    <h1>Air Quality Route App</h1>
+                    <h2>Find The Air Quality And Distance Between Two Places.</h2>
+                    <h3>This App Will Help You Calculate Your Travelling Distance and the Air Quality.</h3>
+                    <a class="primary-button" href="#second-section">LET'S GO</a>
+                </div>
+                
+                <!-- Second Section-->
+                <div id="second-section">
+                    <div class="empty"></div>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="from" class="col-xs-2 control-label"
+                                ><i class="far fa-dot-circle"></i
+                            ></label>
+                            <div class="col-xs-4">
+                                <input
+                                    type="text"
+                                    id="from"
+                                    placeholder="Origin"
+                                    class="form-control"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="to" class="col-xs-2 control-label"
+                                ><i class="fas fa-map-marker-alt"></i
+                            ></label>
+                            <div class="col-xs-4">
+                                <input
+                                    type="text"
+                                    id="to"
+                                    placeholder="Destination"
+                                    class="form-control"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-2 col-xs-10">
+                            <button
+                                class="secondary-button"
+                                onclick="calcRoute();"
+                            >
+                                <i class="fas fa-compass"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="map-container" >
+                    <div id="googleMap"></div>
+                    <div id="output"></div>
+                </div>
+            </div>
+            <!-- Third Section-->
+            <div id="third-section" class="air-info">
+                <div class="air-quality-container">
+                    <h2 class="sub-heading">Air Quality Index</h2>
+                <div class="status-container">
+                    <span class="air-quality" id="aq_el">...</span>
+                    <span class="air-quality">&nbsp;&rarr;&nbsp;</span>
+                    <span class="air-quality-status" id="aq_status">...</span>
+                </div>
+                </div>
+                
+                <div class="component-container">
+                    <h2 class="sub-heading">
+                        Concentration of pollutants in air
+                    </h2>
+
+                    <div class="result-el">
+                        <h3 class="component-names">Carbon Monoxide :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="co"
+                            id="co_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">Nitrogen Monoxide :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="no"
+                            id="no_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">Nitrogen Dioxide :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="no2"
+                            id="no2_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">Ozone :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="o3"
+                            id="o3_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">Sulphur Dioxide :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="so2"
+                            id="so2_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">Fine particles matter :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="pm2_5"
+                            id="pm2_5_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">
+                            Coarse particulate matter :
+                        </h3>
+                        <span
+                            class="component-val"
+                            data-comp="pm10"
+                            id="pm10_el"
+                        ></span>
+                    </div>
+                    <div class="result-el">
+                        <h3 class="component-names">Ammonia :</h3>
+                        <span
+                            class="component-val"
+                            data-comp="nh3"
+                            id="nh3_el"
+                        ></span>
+                    </div>
+                    <!--  micrograms per cubic meter of air (μg/m3)  -->
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h1>About</h1>
+                <p>efhbefejofoouwehfweufebeevcjnbrrufewouewjewnjenj</p>
+            </div>
+
+            <!-- Contact-->
+            <section class="contact-section" id="contact">
+                <h2>Contact Us</h2>
+                <div class="contacts">
+                    <a href="mailto:eguagieosaze@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com"
+                        ><i class="fab fa-instagram"></i></i
+                    ></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/eguagie.osaze"
+                        ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/feed/"
+                        ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                </div>
+                
+            <!-- Footer-->
+            <footer class="footer py-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="footer-container">Copyright &copy; osazeeeguagie2022</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDzFPwqQn2qQMyKk01218tXfFda7RmRmw&libraries=places"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="Scripts/jquery-3.1.1.min.js"></script>
+        <script src="AirApp.js"></script>
+    </body>
+</html>

@@ -1,0 +1,186 @@
+body {
+    color: #173753;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background-color: #BFBDC1;
+    margin: 0px;
+    background-image: url("/Users/osazee.eguagie/Desktop/Route Planner Website/bg.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .container-fluid {
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+
+  #top-section{
+    background-image: url("/Users/osazee.eguagie/Desktop/Route Planner Website/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #second-section{
+    margin-top: 30px;
+  }
+
+  .primary-button{
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    background-color: #173753;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  .primary-button:hover{
+    background-color: white;
+    color: #173753;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .secondary-button{
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    background-color: #173753;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .secondary-button:hover{
+    background-color: white;
+    color: #173753;
+    border: thin solid black;
+  }
+
+  .form-control{
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .form-horizontal{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .form-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  #googleMap {
+    width: 80%;
+    height: 500px;
+  }
+
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map-container #output{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .air-info, .air-quality, .arr, .air-quality-status {
+    background-position: center;
+    color: #173753;
+    font-size: 30px;
+  }
+  .contacts{
+    font-size: 30px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+
+  .air-quality-container{
+    display: flex;
+    margin-top: 20px;
+    font-size: xx-large;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .result-el{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .component-names {
+    display: inline-block;
+    font-style: normal;
+  }
+  
+  .component-container{
+    display: grid;
+    font-size: x-large;
+    justify-content: center;
+  }
+  
+  .component-val {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  .contact-section{
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-section{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .empty{
+    height: 100px; 
+  }
+
+
+
+  
